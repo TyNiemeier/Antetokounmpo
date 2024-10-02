@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c2j6k3pb3hvu0"]
+[gd_scene load_steps=16 format=3 uid="uid://c2j6k3pb3hvu0"]
 
 [ext_resource type="PackedScene" uid="uid://xgm4a2a44vg0" path="res://scenes/player.tscn" id="1_2crnk"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_jhb3b"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bw7gf2mydnno6" path="res://scenes/killzone.tscn" id="5_l4aub"]
 [ext_resource type="PackedScene" uid="uid://clsy2fqliiesb" path="res://scenes/slime.tscn" id="6_cm8aw"]
 [ext_resource type="FontFile" uid="uid://bk5fkal6dqkft" path="res://assets/fonts/PixelOperator8.ttf" id="7_rcyc5"]
-[ext_resource type="Texture2D" uid="uid://57tex1x24qm2" path="res://scenes/New Piskel (2).png" id="10_itlb8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52yn1"]
 texture = ExtResource("2_b77og")
@@ -425,17 +424,9 @@ texture = ExtResource("2_b77og")
 4:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:5/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwff4"]
-texture = ExtResource("10_itlb8")
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
 [sub_resource type="TileSet" id="TileSet_garp3"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_52yn1")
-sources/1 = SubResource("TileSetAtlasSource_nwff4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ydfhh"]
 
@@ -537,6 +528,24 @@ position = Vector2(72, 70)
 [node name="COIN5" parent="Coins" instance=ExtResource("4_6muxu")]
 position = Vector2(397, 39)
 
+[node name="COIN6" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(646, 25)
+
+[node name="COIN7" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(727, -39)
+
+[node name="COIN8" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(902, -54)
+
+[node name="COIN9" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(997, -102)
+
+[node name="COIN10" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(1271, -86)
+
+[node name="COIN11" parent="Coins" instance=ExtResource("4_6muxu")]
+position = Vector2(1590, -185)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="platform" parent="Platforms" instance=ExtResource("3_uqrqj")]
@@ -576,6 +585,14 @@ theme_override_fonts/font = ExtResource("7_rcyc5")
 theme_override_font_sizes/font_size = 8
 text = "Great Job"
 
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 1565.0
+offset_top = -224.0
+offset_right = 1605.0
+offset_bottom = -201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "The End"
+
 [node name="Slime2" parent="." instance=ExtResource("6_cm8aw")]
 position = Vector2(1034, -62)
 
@@ -584,18 +601,3 @@ position = Vector2(1175, -63)
 
 [node name="platform" parent="." instance=ExtResource("3_uqrqj")]
 position = Vector2(958, -43)
-
-[node name="COIN" parent="." instance=ExtResource("4_6muxu")]
-position = Vector2(646, 25)
-
-[node name="COIN2" parent="." instance=ExtResource("4_6muxu")]
-position = Vector2(727, -39)
-
-[node name="COIN3" parent="." instance=ExtResource("4_6muxu")]
-position = Vector2(902, -54)
-
-[node name="COIN4" parent="." instance=ExtResource("4_6muxu")]
-position = Vector2(997, -102)
-
-[node name="COIN5" parent="." instance=ExtResource("4_6muxu")]
-position = Vector2(1271, -86)
