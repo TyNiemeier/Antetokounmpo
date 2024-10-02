@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2j6k3pb3hvu0"]
+[gd_scene load_steps=19 format=3 uid="uid://c2j6k3pb3hvu0"]
 
 [ext_resource type="PackedScene" uid="uid://xgm4a2a44vg0" path="res://scenes/player.tscn" id="1_2crnk"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_jhb3b"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bw7gf2mydnno6" path="res://scenes/killzone.tscn" id="5_l4aub"]
 [ext_resource type="PackedScene" uid="uid://clsy2fqliiesb" path="res://scenes/slime.tscn" id="6_cm8aw"]
 [ext_resource type="FontFile" uid="uid://bk5fkal6dqkft" path="res://assets/fonts/PixelOperator8.ttf" id="7_rcyc5"]
+[ext_resource type="PackedScene" uid="uid://bsnjpj6osd2g2" path="res://scenes/flying_enemy.tscn" id="10_kkmt7"]
+[ext_resource type="PackedScene" uid="uid://dbjk0wrvv2odn" path="res://scenes/fruit.tscn" id="11_wxrc7"]
+[ext_resource type="Script" path="res://scripts/game_manager1.gd" id="12_ghua3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52yn1"]
 texture = ExtResource("2_b77og")
@@ -566,3 +569,31 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_rcyc5")
 theme_override_font_sizes/font_size = 8
 text = "Great Job"
+
+[node name="FlyingEnemy" parent="." instance=ExtResource("10_kkmt7")]
+position = Vector2(123, 63)
+
+[node name="Fruit" type="Node" parent="."]
+
+[node name="Fruit2" parent="." instance=ExtResource("11_wxrc7")]
+position = Vector2(133, -55)
+
+[node name="GameManager1" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_ghua3")
+
+[node name="FruitScore" type="Label" parent="GameManager1"]
+offset_left = 713.0
+offset_top = -65.0
+offset_right = 866.0
+offset_bottom = -43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ldbl2")
+theme_override_font_sizes/font_size = 8
+text = "You collected X fruit!"
+
+[node name="Fruit3" parent="." instance=ExtResource("11_wxrc7")]
+position = Vector2(134, -27)
+
+[node name="Fruit4" parent="." instance=ExtResource("11_wxrc7")]
+position = Vector2(599, 42)
